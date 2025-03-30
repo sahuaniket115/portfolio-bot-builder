@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -13,16 +14,16 @@ export function Hero() {
       <div className="container mx-auto flex flex-col items-center text-center space-y-10 animate-fade-in">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
           <span className="text-foreground">Hi, I'm </span>
-          <span className="text-primary">Alex Dev</span>
+          <span className="text-primary">Alex Chen</span>
         </h1>
         
         <p className="text-xl md:text-2xl max-w-2xl text-muted-foreground">
-          Full Stack Developer specialized in creating elegant, functional web applications with modern technologies
+          AI Researcher & Full Stack Developer specialized in machine learning systems and elegant web applications
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" className="gap-2" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
-            View My Work
+          <Button size="lg" className="gap-2" onClick={() => document.getElementById('ai-projects')?.scrollIntoView({ behavior: 'smooth' })}>
+            View AI Projects
           </Button>
           <Button size="lg" variant="outline" className="gap-2" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Get In Touch
@@ -30,17 +31,22 @@ export function Hero() {
         </div>
         
         <div className="flex gap-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Button variant="ghost" size="icon">
               <Github />
             </Button>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Button variant="ghost" size="icon">
               <Linkedin />
             </Button>
           </a>
-          <a href="mailto:example@example.com" aria-label="Email">
+          <a href="https://twitter.com/alexchenai" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <Button variant="ghost" size="icon">
+              <Twitter />
+            </Button>
+          </a>
+          <a href="mailto:alex.chen@example.com" aria-label="Email">
             <Button variant="ghost" size="icon">
               <Mail />
             </Button>
@@ -48,7 +54,7 @@ export function Hero() {
         </div>
         
         <a 
-          href="#projects" 
+          href="#ai-projects" 
           className="absolute bottom-10 animate-bounce" 
           aria-label="Scroll down"
         >

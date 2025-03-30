@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Send, Bot, User, ArrowDown } from 'lucide-react';
+import { Send, Bot, User, ArrowDown, Sparkles, Database, Code } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type Message = {
@@ -14,18 +14,18 @@ type Message = {
   timestamp: Date;
 };
 
-// Mock AI responses for the chatbot
+// Enhanced AI responses for the chatbot
 const botResponses = [
-  "Hello! I'm Alex's AI assistant. How can I help you learn about their skills and projects?",
-  "Alex specializes in full-stack development with a focus on React, TypeScript, and Node.js.",
-  "You can see examples of Alex's work in the Projects section above. The E-Commerce Platform project demonstrates their full-stack capabilities.",
-  "Alex has 5 years of professional experience working with startups and enterprise clients.",
-  "Alex's most recent project was an AI-powered task management application that uses machine learning for task prioritization.",
-  "Yes, Alex is available for freelance work and consulting. You can use the contact form to discuss your project.",
-  "Alex has experience with React, TypeScript, Node.js, MongoDB, PostgreSQL, AWS, and Docker, among other technologies.",
-  "Alex graduated with a Computer Science degree from MIT and has also completed specialized courses in machine learning and UX design.",
-  "The best way to contact Alex is through the contact form on this website or via email at alex.dev@example.com.",
-  "The portfolio site you're currently browsing was built using React, TypeScript, and Tailwind CSS."
+  "Hello! I'm Alex's custom-trained AI assistant. How can I help you learn about my research and projects?",
+  "I specialize in building AI systems with PyTorch, TensorFlow, and Hugging Face's transformers library. Would you like details on any specific technique?",
+  "My latest research focuses on sparse attention mechanisms for efficient transformer models. You can read my paper in the Research section.",
+  "I've developed several state-of-the-art models for NLP tasks including language understanding, text generation, and sentiment analysis.",
+  "My approach to AI ethics centers on fairness, accountability, transparency, and explainability. See my publications for deeper insights.",
+  "In my image generation project, I combined diffusion models with CLIP guidance to create visually coherent images from complex prompts.",
+  "I've contributed to open-source AI projects including Hugging Face transformers and FastAI. Check my GitHub for code samples.",
+  "My AI systems have been deployed in production environments using Docker, Kubernetes, and AWS SageMaker.",
+  "I've implemented custom fine-tuning techniques to adapt large language models to specialized domains with limited training data.",
+  "I built this portfolio chatbot using a custom-trained model that combines retrieval-augmented generation with a knowledge base about my work."
 ];
 
 function getRandomResponse(): string {
@@ -38,7 +38,7 @@ export function Chatbot() {
     {
       id: '1',
       role: 'assistant',
-      content: "Hi there! I'm Alex's virtual assistant. How can I help you today?",
+      content: "Hello! I'm Alex's AI assistant trained on his work and research. How can I help you learn more about his AI projects or skills?",
       timestamp: new Date()
     }
   ]);
@@ -88,9 +88,13 @@ export function Chatbot() {
     <section id="chatbot" className="py-20 px-6 bg-secondary/20">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Chat with My AI Assistant</h2>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Bot className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl md:text-4xl font-bold">AI Assistant</h2>
+            <Sparkles className="h-8 w-8 text-primary" />
+          </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have questions about my skills, projects, or availability? My AI assistant can help!
+            Chat with my custom-trained AI assistant about my research, projects, and expertise
           </p>
         </div>
 
@@ -99,7 +103,11 @@ export function Chatbot() {
             <CardHeader className="bg-primary/10">
               <CardTitle className="flex items-center gap-2">
                 <Bot className="h-5 w-5" />
-                AI Assistant
+                <span>Alex's Research Assistant</span>
+                <div className="ml-2 flex items-center gap-1">
+                  <Database className="h-3 w-3 text-muted-foreground" />
+                  <Code className="h-3 w-3 text-muted-foreground" />
+                </div>
               </CardTitle>
             </CardHeader>
             
@@ -175,7 +183,7 @@ export function Chatbot() {
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type your message..."
+                  placeholder="Ask about my AI research and projects..."
                   className="flex-1"
                   disabled={isTyping}
                 />
