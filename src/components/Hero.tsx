@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, GitHub, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -33,7 +32,7 @@ export function Hero() {
         <div className="flex gap-4">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Button variant="ghost" size="icon">
-              <GitHub />
+              <Github />
             </Button>
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
